@@ -64,11 +64,45 @@ ul{
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: var(--primary-text-color);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* .link a{
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
 .link a:hover,
 .link a:focus {
     color: #404BBF;
-    text-decoration: underline #404BBF;
+    text-decoration: underline #404BBF; 
+}
+
+.link-menu {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--primary-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list .link:hover,
+.list .link:focus {
+    color: #404bbf;
+}
+.link-active{
+position: relative;
+color: var(--ocean);
+}
+.link-active::after {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(1px);
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: var(--ocean);
+    border-radius: 2px;
 }
 .address {
     font-style: normal;
@@ -95,28 +129,7 @@ display: block;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: var(--title-text-colour);
-}
-.filter .btn-filter {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.5;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.04em;
-        color: #4D5AE5;
-        background: #F4F4FD;
-            border: 1px solid #E7E9FC;
-            border-radius: 4px;
-            font-family: "Roboto", sans-serif;
-}
-.filter .btn-filter:hover,
-.filter .btn-filter:focus{
-    background: #404BBF;
-        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-        border-radius: 4px;
-        color: #FFFFFF;
-        cursor: pointer;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .example-title{
         font-weight: 500;
@@ -179,10 +192,10 @@ display: block;
         min-width: 169px;
         height: 56px;
         border: none;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-button:hover,
 .main-button:focus{
-    border-radius: 4px;
     background-color: var(--ocean);
 }
 .about-title-two{
@@ -280,28 +293,19 @@ header{
     background-color: var(--button-color);
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-filter:hover,
 .btn-filter:focus{
     color: #FFFFFF;
     background-color: #404BBF;
     cursor: pointer;
-    border-radius: 4px;
     border-color: transparent;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.link-menu{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: var(--primary-text-color);
-}
 
-.list .link:hover,
-.list .link:focus {
-color: #404bbf;
-}
 .container {
     width: 1158px;
     padding-left: 15px;
@@ -411,6 +415,7 @@ margin: 0 auto;
     height: 40px;
     border-radius: 50%;
     background-color: var(--logo-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -472,6 +477,7 @@ margin: 0 auto;
 }
 .container-card-portfolio .item .link{
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .container-card-portfolio .item .link:hover,
 .container-card-portfolio .item .link:focus {
@@ -519,6 +525,8 @@ height: 88px;
     align-items: center;
     justify-content: center;
     color: #afb1b8;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -526,7 +534,8 @@ height: 88px;
     border-color: var(--ocean);
 }
 .customers-icons {
-    fill: currentColor;;
+    fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icons:hover,
 .customers-icons:focus {
@@ -555,6 +564,7 @@ fill: var(--ocean);
     height: 40px;
     border-radius: 50%;
     background-color: var(--logo-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-footer-link:hover,
 .social-footer-link:focus {
@@ -567,4 +577,80 @@ background-color: #31D0AA;
     display: flex;
     gap: 120px;
     align-items: baseline;
+}
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal{
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 408px;
+    min-height: 576px;
+    background: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.button-icon {
+    fill: #2E2F42;
+}
+.overlay-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+.overlay{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transform: translate(0, 100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    margin: 0;
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--button-color);
+    background: var(--logo-color);
+}
+.container-card-portfolio .item .link:hover .overlay,
+.container-card-portfolio .item .link:focus .overlay {
+transform: translate(0, 0);
 }
